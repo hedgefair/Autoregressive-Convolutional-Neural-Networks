@@ -1,0 +1,9 @@
+# yaml template for prediction of electricity data
+training:
+    epoch: 100
+    batch_size: 128
+    learning_rate: 1.0e-3
+    train_data: data_files/uci_train.pickle
+    test_data: data_files/uci_test.pickle
+    val_data: data_files/uci_val.pickle
+

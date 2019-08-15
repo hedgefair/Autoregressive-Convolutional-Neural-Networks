@@ -1,0 +1,32 @@
+# yaml template for prediction of electricity data
+run:
+    model: SOCNN
+    cuda_devices: 1
+
+    epoch: 1000
+    batch_size: 128
+    learning_rate: 1.0e-2
+    aux_weight: 0 
+
+    train_data: data_files/uci_train.pickle
+    test_data: data_files/uci_test.pickle
+    val_data: data_files/uci_val.pickle
+
+    log_train: logs/elec_train_0814_a.txt
+    log_test: logs/elec_test_0814_a.txt
+    log_error: logs/error_0814_a.txt
+
+    model_path: save/elec_0814_a.ckpt
+
+
+network:
+    len_input: 60
+    len_output: 1 
+    dim_input: 10
+    dim_output: 7
+
+    num_sig: 10 # number of layers in sig network
+    num_off: 1 # number of layers in off network
+    conv_sig: [32]
+    conv_off: [8]
+
