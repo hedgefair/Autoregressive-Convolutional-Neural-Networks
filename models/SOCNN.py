@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils import weights_init
+from .utils import weights_init
 
 class SOCNN(nn.Module):
     def __init__(self, FLAGS):
