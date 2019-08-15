@@ -2,12 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-def weights_init(m):
-    if isinstance(m, nn.Conv1d):
-        nn.init.xavier_uniform_(m.weight)
-    if isinstance(m, nn.Linear):
-        nn.init.xavier_uniform_(m.weight)
-
+from utils import weights_init
 
 class SOCNN(nn.Module):
     def __init__(self, FLAGS):
