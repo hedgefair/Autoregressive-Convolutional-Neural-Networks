@@ -69,7 +69,7 @@ def test(model, FLAGS):
     total_loss_aux = 0
     
     with torch.no_grad():
-        for idx, (data, target, aux) in enumerate(FLAGS.train_data.iter_once(FLAGS.batch_size)):
+        for idx, (data, target, aux) in enumerate(FLAGS.test_data.iter_once(FLAGS.batch_size)):
             data, target, aux = torch.tensor(data, device=FLAGS.device), \
                                 torch.tensor(target, device=FLAGS.device), \
                                 torch.tensor(aux, device=FLAGS.device)
